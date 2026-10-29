@@ -1,0 +1,830 @@
+{
+  "vectors": {
+    "characters/tuna-idle": {
+      "source": "tuna",
+      "characterId": 106,
+      "crop": null
+    },
+    "characters/tuna-walk": {
+      "source": "tuna",
+      "characterId": 79,
+      "crop": null
+    },
+    "characters/tuna-jump": {
+      "source": "tuna",
+      "characterId": 4,
+      "crop": [
+        0,
+        8,
+        181,
+        266
+      ]
+    },
+    "characters/tuna-kick": {
+      "source": "tuna",
+      "characterId": 93,
+      "crop": null
+    },
+    "characters/tuna-hurt": {
+      "source": "tuna",
+      "characterId": 81,
+      "crop": [
+        0,
+        0,
+        232,
+        320
+      ]
+    },
+    "characters/thief-idle": {
+      "source": "tuna",
+      "characterId": 126,
+      "crop": [
+        77,
+        93,
+        174,
+        221
+      ]
+    },
+    "characters/hacker-idle": {
+      "source": "hacker",
+      "characterId": 183,
+      "crop": [
+        0,
+        90,
+        116,
+        256
+      ]
+    },
+    "characters/hacker-attack": {
+      "source": "hacker",
+      "characterId": 186,
+      "crop": [
+        0,
+        0,
+        207,
+        236.5
+      ]
+    },
+    "characters/hacker-kick": {
+      "source": "hacker",
+      "characterId": 237,
+      "crop": [
+        175,
+        0,
+        346,
+        436.35
+      ]
+    },
+    "characters/hacker-hurt": {
+      "source": "hacker",
+      "characterId": 152,
+      "crop": null
+    },
+    "characters/angry-idle": {
+      "source": "hacker",
+      "characterId": 149,
+      "crop": null
+    },
+    "characters/angry-fire": {
+      "source": "hacker",
+      "characterId": 155,
+      "crop": null
+    },
+    "characters/fries-idle": {
+      "source": "fries",
+      "characterId": 288,
+      "crop": null
+    },
+    "characters/fries-dash": {
+      "source": "fries",
+      "characterId": 290,
+      "crop": [
+        54,
+        0,
+        66,
+        82
+      ]
+    },
+    "characters/fries-hurt": {
+      "source": "fries",
+      "characterId": 291,
+      "crop": [
+        54,
+        0,
+        66,
+        82
+      ]
+    },
+    "characters/fries-hold": {
+      "source": "fries",
+      "characterId": 48,
+      "crop": [
+        95,
+        61,
+        335,
+        300
+      ]
+    },
+    "characters/cross-idle": {
+      "source": "cross",
+      "characterId": 640,
+      "crop": null
+    },
+    "characters/cross-strum": {
+      "source": "cross",
+      "characterId": 651,
+      "crop": null
+    },
+    "characters/cross-jump": {
+      "source": "cross",
+      "characterId": 690,
+      "crop": null
+    },
+    "characters/cross-hurt": {
+      "source": "cross",
+      "characterId": 696,
+      "crop": null
+    },
+    "characters/cross-magic": {
+      "source": "cross",
+      "characterId": 480,
+      "crop": [
+        150,
+        155,
+        207,
+        172.15
+      ]
+    },
+    "characters/emerald-windup": {
+      "source": "emerald",
+      "characterId": 233,
+      "crop": null
+    },
+    "characters/emerald-idle": {
+      "source": "emerald",
+      "characterId": 101,
+      "crop": null
+    },
+    "characters/emerald-cast": {
+      "source": "emerald",
+      "characterId": 177,
+      "crop": null
+    },
+    "characters/emerald-strike": {
+      "source": "emerald",
+      "characterId": 236,
+      "crop": null
+    },
+    "characters/emerald-hurt": {
+      "source": "emerald",
+      "characterId": 145,
+      "crop": null
+    },
+    "characters/emerald-sing": {
+      "source": "emerald",
+      "characterId": 12,
+      "crop": null
+    },
+    "props/tuna-can": {
+      "source": "tuna",
+      "characterId": 24,
+      "crop": null
+    },
+    "props/pepper": {
+      "source": "tuna",
+      "characterId": 20,
+      "crop": null
+    },
+    "props/rice": {
+      "source": "tuna",
+      "characterId": 120,
+      "crop": [
+        0,
+        55,
+        204,
+        185
+      ]
+    },
+    "props/note": {
+      "source": "tuna",
+      "characterId": 9,
+      "crop": null
+    },
+    "props/file": {
+      "source": "hacker",
+      "characterId": 38,
+      "crop": null
+    },
+    "props/fire": {
+      "source": "hacker",
+      "characterId": 59,
+      "crop": null
+    },
+    "props/blast": {
+      "source": "hacker",
+      "characterId": 98,
+      "crop": null
+    },
+    "props/window": {
+      "source": "hacker",
+      "characterId": 54,
+      "crop": null
+    },
+    "props/fries": {
+      "source": "fries",
+      "characterId": 48,
+      "crop": [
+        95,
+        154,
+        85,
+        107
+      ]
+    },
+    "props/beans": {
+      "source": "cross",
+      "characterId": 9,
+      "crop": [
+        303,
+        10,
+        156,
+        99
+      ]
+    },
+    "props/magic": {
+      "source": "cross",
+      "characterId": 480,
+      "crop": [
+        153,
+        217,
+        66,
+        90
+      ]
+    },
+    "props/fishcake": {
+      "source": "emerald",
+      "characterId": 201,
+      "crop": null
+    },
+    "props/phoenix": {
+      "source": "emerald",
+      "characterId": 89,
+      "crop": null
+    },
+    "stages/fridge": {
+      "source": "tuna",
+      "characterId": 51,
+      "crop": null
+    },
+    "stages/computer": {
+      "source": "hacker",
+      "characterId": 91,
+      "crop": [
+        0,
+        0,
+        241,
+        292.45
+      ]
+    }
+  },
+  "audio": {
+    "tuna-select": {
+      "source": "tuna",
+      "file": "audio/tuna-select.wav",
+      "start": 13.75,
+      "duration": 3.65,
+      "sceneFrame": 197,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.01,
+        "truePeakDbtp": -3.72,
+        "loudnessRangeLu": 0.4,
+        "originalIntegratedLufs": -12.83
+      }
+    },
+    "tuna-special": {
+      "source": "tuna",
+      "file": "audio/tuna-special.wav",
+      "start": 43.35,
+      "duration": 3.5,
+      "sceneFrame": 611,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.01,
+        "truePeakDbtp": -4.73,
+        "loudnessRangeLu": 0.3,
+        "originalIntegratedLufs": -8.83
+      }
+    },
+    "tuna-super": {
+      "source": "tuna",
+      "file": "audio/tuna-super.wav",
+      "start": 65.0,
+      "duration": 5.0,
+      "sceneFrame": 916,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.0,
+        "truePeakDbtp": -4.88,
+        "loudnessRangeLu": 0.7,
+        "originalIntegratedLufs": -10.61
+      }
+    },
+    "tuna-hurt": {
+      "source": "tuna",
+      "file": "audio/tuna-hurt.wav",
+      "start": 64.25,
+      "duration": 1.5,
+      "sceneFrame": 905,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.01,
+        "truePeakDbtp": -7.26,
+        "loudnessRangeLu": 0.0,
+        "originalIntegratedLufs": -8.06
+      }
+    },
+    "tuna-win": {
+      "source": "tuna",
+      "file": "audio/tuna-win.wav",
+      "start": 46.9,
+      "duration": 4.8,
+      "sceneFrame": 664,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -17.99,
+        "truePeakDbtp": -4.42,
+        "loudnessRangeLu": 1.4,
+        "originalIntegratedLufs": -10.66
+      }
+    },
+    "thief-select": {
+      "source": "tuna",
+      "file": "audio/thief-select.wav",
+      "start": 44.7,
+      "duration": 3.65,
+      "sceneFrame": 631,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -17.99,
+        "truePeakDbtp": -4.62,
+        "loudnessRangeLu": 0.7,
+        "originalIntegratedLufs": -10.33
+      }
+    },
+    "thief-special": {
+      "source": "tuna",
+      "file": "audio/thief-special.wav",
+      "start": 44.7,
+      "duration": 3.65,
+      "sceneFrame": 631,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -17.99,
+        "truePeakDbtp": -4.62,
+        "loudnessRangeLu": 0.7,
+        "originalIntegratedLufs": -10.33
+      }
+    },
+    "thief-super": {
+      "source": "tuna",
+      "file": "audio/thief-super.wav",
+      "start": 71.3,
+      "duration": 4.8,
+      "sceneFrame": 1003,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.0,
+        "truePeakDbtp": -4.72,
+        "loudnessRangeLu": 0.3,
+        "originalIntegratedLufs": -10.25
+      }
+    },
+    "hacker-select": {
+      "source": "hacker",
+      "file": "audio/hacker-select.wav",
+      "start": 4.8,
+      "duration": 4.2,
+      "sceneFrame": 51,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.0,
+        "truePeakDbtp": -6.22,
+        "loudnessRangeLu": 0.7,
+        "originalIntegratedLufs": -5.93
+      }
+    },
+    "hacker-special": {
+      "source": "hacker",
+      "file": "audio/hacker-special.wav",
+      "start": 46.75,
+      "duration": 4.2,
+      "sceneFrame": 471,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.01,
+        "truePeakDbtp": -6.85,
+        "loudnessRangeLu": 0.3,
+        "originalIntegratedLufs": -6.04
+      }
+    },
+    "hacker-super": {
+      "source": "hacker",
+      "file": "audio/hacker-super.wav",
+      "start": 101.8,
+      "duration": 5.6,
+      "sceneFrame": 1021,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.0,
+        "truePeakDbtp": -7.18,
+        "loudnessRangeLu": 0.4,
+        "originalIntegratedLufs": -5.82
+      }
+    },
+    "hacker-hurt": {
+      "source": "hacker",
+      "file": "audio/hacker-hurt.wav",
+      "start": 23.5,
+      "duration": 1.5,
+      "sceneFrame": 237,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -17.98,
+        "truePeakDbtp": -7.2,
+        "loudnessRangeLu": 0.0,
+        "originalIntegratedLufs": -6.53
+      }
+    },
+    "hacker-win": {
+      "source": "hacker",
+      "file": "audio/hacker-win.wav",
+      "start": 138.25,
+      "duration": 4.8,
+      "sceneFrame": 1386,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.01,
+        "truePeakDbtp": -8.32,
+        "loudnessRangeLu": 1.1,
+        "originalIntegratedLufs": -5.15
+      }
+    },
+    "angry-select": {
+      "source": "hacker",
+      "file": "audio/angry-select.wav",
+      "start": 74.25,
+      "duration": 4.2,
+      "sceneFrame": 746,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.0,
+        "truePeakDbtp": -8.86,
+        "loudnessRangeLu": 1.0,
+        "originalIntegratedLufs": -4.61
+      }
+    },
+    "angry-special": {
+      "source": "hacker",
+      "file": "audio/angry-special.wav",
+      "start": 83.9,
+      "duration": 4.5,
+      "sceneFrame": 841,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.0,
+        "truePeakDbtp": -5.69,
+        "loudnessRangeLu": 0.5,
+        "originalIntegratedLufs": -6.09
+      }
+    },
+    "angry-super": {
+      "source": "hacker",
+      "file": "audio/angry-super.wav",
+      "start": 54.25,
+      "duration": 5.4,
+      "sceneFrame": 546,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.0,
+        "truePeakDbtp": -8.98,
+        "loudnessRangeLu": 0.2,
+        "originalIntegratedLufs": -4.66
+      }
+    },
+    "fries-select": {
+      "source": "fries",
+      "file": "audio/fries-select.wav",
+      "start": 18.65,
+      "duration": 3.8,
+      "sceneFrame": 226,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.0,
+        "truePeakDbtp": -4.45,
+        "loudnessRangeLu": 0.4,
+        "originalIntegratedLufs": -17.21
+      }
+    },
+    "fries-special": {
+      "source": "fries",
+      "file": "audio/fries-special.wav",
+      "start": 18.65,
+      "duration": 3.8,
+      "sceneFrame": 226,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.0,
+        "truePeakDbtp": -4.45,
+        "loudnessRangeLu": 0.4,
+        "originalIntegratedLufs": -17.21
+      }
+    },
+    "fries-super": {
+      "source": "fries",
+      "file": "audio/fries-super.wav",
+      "start": 38.15,
+      "duration": 4.8,
+      "sceneFrame": 460,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.0,
+        "truePeakDbtp": -3.1,
+        "loudnessRangeLu": 3.0,
+        "originalIntegratedLufs": -14.74
+      }
+    },
+    "fries-hurt": {
+      "source": "fries",
+      "file": "audio/fries-hurt.wav",
+      "start": 38.4,
+      "duration": 1.4,
+      "sceneFrame": 463,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.0,
+        "truePeakDbtp": -4.55,
+        "loudnessRangeLu": 0.0,
+        "originalIntegratedLufs": -13.3
+      }
+    },
+    "fries-win": {
+      "source": "fries",
+      "file": "audio/fries-win.wav",
+      "start": 116.57,
+      "duration": 4.5,
+      "sceneFrame": 1401,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.01,
+        "truePeakDbtp": -4.0,
+        "loudnessRangeLu": 4.6,
+        "originalIntegratedLufs": -15.09
+      }
+    },
+    "cross-select": {
+      "source": "cross",
+      "file": "audio/cross-select.wav",
+      "start": 129.32,
+      "duration": 4.2,
+      "sceneFrame": 1554,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.01,
+        "truePeakDbtp": -5.7,
+        "loudnessRangeLu": 0.4,
+        "originalIntegratedLufs": -9.97
+      }
+    },
+    "cross-special": {
+      "source": "cross",
+      "file": "audio/cross-special.wav",
+      "start": 101.32,
+      "duration": 3.8,
+      "sceneFrame": 1218,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.05,
+        "truePeakDbtp": -6.46,
+        "loudnessRangeLu": 0.1,
+        "originalIntegratedLufs": -9.91
+      }
+    },
+    "cross-magic": {
+      "source": "cross",
+      "file": "audio/cross-magic.wav",
+      "start": 102.32,
+      "duration": 3.8,
+      "sceneFrame": 1230,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.0,
+        "truePeakDbtp": -6.29,
+        "loudnessRangeLu": 0.0,
+        "originalIntegratedLufs": -10.02
+      }
+    },
+    "cross-super": {
+      "source": "cross",
+      "file": "audio/cross-super.wav",
+      "start": 133.65,
+      "duration": 5.4,
+      "sceneFrame": 1606,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.17,
+        "truePeakDbtp": -3.0,
+        "loudnessRangeLu": 6.1,
+        "originalIntegratedLufs": -18.02
+      }
+    },
+    "cross-hurt": {
+      "source": "cross",
+      "file": "audio/cross-hurt.wav",
+      "start": 137.73,
+      "duration": 1.4,
+      "sceneFrame": 1655,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.01,
+        "truePeakDbtp": -4.94,
+        "loudnessRangeLu": 0.0,
+        "originalIntegratedLufs": -21.52
+      }
+    },
+    "cross-win": {
+      "source": "cross",
+      "file": "audio/cross-win.wav",
+      "start": 130.23,
+      "duration": 4.5,
+      "sceneFrame": 1565,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.01,
+        "truePeakDbtp": -5.9,
+        "loudnessRangeLu": 0.5,
+        "originalIntegratedLufs": -10.09
+      }
+    },
+    "emerald-select": {
+      "source": "emerald",
+      "file": "audio/emerald-select.wav",
+      "start": 63.48,
+      "duration": 4.2,
+      "sceneFrame": 1557,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.01,
+        "truePeakDbtp": -7.74,
+        "loudnessRangeLu": 0.4,
+        "originalIntegratedLufs": -15.12
+      }
+    },
+    "emerald-special": {
+      "source": "emerald",
+      "file": "audio/emerald-special.wav",
+      "start": 114.69,
+      "duration": 4.2,
+      "sceneFrame": 2786,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.0,
+        "truePeakDbtp": -7.61,
+        "loudnessRangeLu": 0.1,
+        "originalIntegratedLufs": -14.74
+      }
+    },
+    "emerald-super": {
+      "source": "emerald",
+      "file": "audio/emerald-super.wav",
+      "start": 59.98,
+      "duration": 5.6,
+      "sceneFrame": 1473,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.0,
+        "truePeakDbtp": -7.49,
+        "loudnessRangeLu": 0.2,
+        "originalIntegratedLufs": -14.76
+      }
+    },
+    "emerald-hurt": {
+      "source": "emerald",
+      "file": "audio/emerald-hurt.wav",
+      "start": 95.03,
+      "duration": 1.5,
+      "sceneFrame": 2314,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.0,
+        "truePeakDbtp": -7.85,
+        "loudnessRangeLu": 0.0,
+        "originalIntegratedLufs": -14.8
+      }
+    },
+    "emerald-win": {
+      "source": "emerald",
+      "file": "audio/emerald-win.wav",
+      "start": 102.78,
+      "duration": 4.8,
+      "sceneFrame": 2500,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -18.0,
+        "integratedLufs": -18.01,
+        "truePeakDbtp": -7.63,
+        "loudnessRangeLu": 0.1,
+        "originalIntegratedLufs": -14.77
+      }
+    },
+    "tuna-loop": {
+      "source": "tuna",
+      "file": "audio/tuna-loop.wav",
+      "start": 15.8,
+      "duration": 60.0,
+      "sceneFrame": 223,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -20.0,
+        "integratedLufs": -20.0,
+        "truePeakDbtp": -4.58,
+        "loudnessRangeLu": 5.1,
+        "originalIntegratedLufs": -10.73
+      }
+    },
+    "hacker-loop": {
+      "source": "hacker",
+      "file": "audio/hacker-loop.wav",
+      "start": 3.5,
+      "duration": 60.0,
+      "sceneFrame": 36,
+      "normalization": {
+        "method": "ebu-r128",
+        "targetLufs": -20.0,
+        "integratedLufs": -20.0,
+        "truePeakDbtp": -7.5,
+        "loudnessRangeLu": 2.3,
+        "originalIntegratedLufs": -5.53
+      }
+    }
+  },
+  "sourceFiles": {
+    "tuna": {
+      "frameRate": 14.0,
+      "frameCount": 1416,
+      "version": 8
+    },
+    "hacker": {
+      "frameRate": 10.0,
+      "frameCount": 1461,
+      "version": 8
+    },
+    "fries": {
+      "frameRate": 12.0,
+      "frameCount": 1504,
+      "version": 8
+    },
+    "cross": {
+      "frameRate": 12.0,
+      "frameCount": 2645,
+      "version": 7
+    },
+    "emerald": {
+      "frameRate": 24.0,
+      "frameCount": 6350,
+      "version": 8,
+      "audioSpriteId": 9,
+      "audioStartRootFrame": 31
+    }
+  }
+}

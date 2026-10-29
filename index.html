@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf9f5">
+  <meta name="description" content="고추참치송, 해킹송, 감자튀김송, 썩던콩, 에메랄드 소드의 원본 그림과 음원으로 즐기는 낙서 대전게임.">
+  <title>플래시 난투</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="./assets/fonts/Gaegu-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+  <main class="game-shell" id="game-shell" data-screen="mode" tabindex="0" aria-label="플래시 난투 게임">
+    <header class="game-header">
+      <button class="brand" id="brand-button" aria-label="모드 선택으로"><span class="brand-mark">vs<span>!</span></span><span class="brand-text">플래시 난투<small>FLASH VERSUS</small></span></button>
+      <ol class="step-trail" aria-label="게임 진행 순서"><li data-step="0" aria-current="step"><i>01</i><span>모드 선택</span></li><li data-step="1"><i>02</i><span>캐릭터</span></li><li data-step="2"><i>03</i><span>무대 선택</span></li><li data-step="3"><i>04</i><span>대전!</span></li></ol>
+      <div class="header-actions">
+        <button id="pause-button" class="icon-button hidden" aria-label="일시정지" title="일시정지">Ⅱ</button>
+        <button id="sound-button" class="icon-button" aria-label="소리 끄기" title="소리 켜기 / 끄기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4 5 9H2v6h3l6 5V4Z"/><path class="sound-waves" d="M15 8q5 4 0 8m3-11q8 7 0 14"/><path class="sound-muted" d="m16 9 6 6m0-6-6 6"/></svg></button>
+        <button class="icon-button" data-open="moves-dialog" aria-label="조작법과 기술표" title="조작법과 기술표">?</button>
+        <button class="icon-button" data-open="settings-dialog" aria-label="게임 설정" title="게임 설정"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16M8 3v6m8 0v6M10 15v6"/></svg></button>
+        <button id="fullscreen-button" class="icon-button fullscreen-button" aria-label="전체화면" title="전체화면">⛶</button>
+      </div>
+    </header>
+
+    <div class="screen-stack">
+      <section class="game-screen mode-screen" id="mode-screen" aria-labelledby="mode-title">
+        <div class="mode-intro"><h1 id="mode-title"><span class="marker">플래시 난투</span><i class="title-star" aria-hidden="true">✳</i></h1></div>
+        <img class="menu-doodle doodle-tuna" src="./assets/characters/tuna-walk.svg" alt=""><img class="menu-doodle doodle-thief" src="./assets/characters/thief-idle.svg" alt="">
+        <div class="mode-grid" id="mode-options" role="group" aria-label="플레이 모드 선택"></div>
+        <div class="mode-bottom-note"><button class="text-button" data-open="archive-dialog">원작자 & 원본 보관함 ↗</button></div>
+      </section>
+
+      <section class="game-screen multiplayer-screen hidden" id="multiplayer-screen" aria-labelledby="multiplayer-title" inert>
+        <div class="screen-heading"><h1 id="multiplayer-title"><span class="marker">멀티플레이</span></h1><span class="connection-state" id="online-status"></span></div>
+        <div class="multiplayer-options" id="multiplayer-options" role="group" aria-label="멀티플레이 방식">
+          <button class="multiplayer-card selected" data-multiplayer="online"><span class="multiplayer-symbol">↗</span><strong>온라인 대전</strong><span>랜덤 매칭 / 방 코드</span><b>→</b></button>
+          <button class="multiplayer-card" data-multiplayer="local"><span class="multiplayer-symbol">2P</span><strong>같은 기기 2인</strong><span>키보드 / 게임패드</span><b>→</b></button>
+        </div>
+        <div class="online-connect hidden" id="online-connect">
+          <article class="connection-card random-match-card"><span class="player-tag">자동 대전</span><h2>랜덤 매칭</h2><div class="connection-doodle" aria-hidden="true">↔</div><p class="random-wait-note">최대 3분 대기</p><button class="primary-button" id="find-random-match">상대 찾기 →</button></article>
+          <article class="connection-card"><span class="player-tag">1P · 방장</span><h2>새 방 만들기</h2><div class="connection-doodle" aria-hidden="true">＋</div><button class="primary-button" id="create-room">방 만들기 →</button></article>
+          <form class="connection-card" id="join-room-form"><span class="player-tag opponent">2P · 참가</span><h2>방 코드로 참가</h2><label for="room-code-input">방 코드 6자리</label><input id="room-code-input" class="room-code-input" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="6" placeholder="ABC234" aria-label="참가할 방 코드"><button class="outline-button" type="submit" id="join-room">참가 →</button></form>
+        </div>
+        <div class="online-search hidden" id="online-search">
+          <div class="matching-pair" aria-hidden="true"><span>?</span><i>VS</i><span>?</span></div>
+          <h2 id="matching-state" role="status" aria-live="polite">상대를 찾는 중</h2>
+          <strong class="matching-time" id="matching-time" role="timer" aria-label="남은 매칭 대기 시간">3:00</strong>
+          <p id="matching-note">최대 3분 동안 기다립니다.</p>
+          <div class="matching-actions"><button class="outline-button" id="cancel-random-match">매칭 취소</button><button class="primary-button hidden" id="retry-random-match">다시 찾기 ↻</button><button class="text-button hidden" id="match-back-button">이전으로</button></div>
+        </div>
+        <div class="online-waiting hidden" id="online-waiting">
+          <div class="room-invite"><label for="room-code-value">방 코드</label><input id="room-code-value" readonly aria-label="현재 방 코드"><div><button class="text-button" id="copy-room-code">코드 복사</button><button class="text-button" id="copy-room-link">초대 링크 ↗</button></div></div>
+          <div class="room-player-list" id="room-player-list"></div>
+          <p class="room-wait-note" id="room-wait-note">상대가 입장하면 캐릭터 선택으로 이동합니다.</p>
+          <div class="room-actions"><button class="text-button" id="online-leave-button">방 나가기</button><button class="outline-button hidden" id="find-next-match">새 상대 찾기</button></div>
+        </div>
+        <p class="online-message" id="online-message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="game-screen character-screen hidden" id="characters-screen" aria-labelledby="character-title" inert>
+        <div class="screen-heading"><div><h1 id="character-title"><span class="marker">캐릭터 선택</span></h1></div><button class="text-button" id="fighter-moves-button">기술표 보기 ↗</button></div>
+        <div class="character-stage">
+          <article class="fighter-preview preview-p1" id="preview-0"><div class="preview-label"><span class="player-tag">1P</span><span class="selection-status" id="selection-status-0">선택 중</span></div><div class="preview-art"><span class="preview-halo"></span><img id="preview-art-0" src="./assets/characters/tuna-idle.svg" alt="참치맨"></div><div class="preview-info"><p class="preview-series" id="preview-series-0">고추참치쏭</p><h2 id="preview-name-0">참치맨</h2><span class="role-chip" id="preview-role-0">균형형</span><p class="preview-skill" id="preview-skill-0">참치캔 투척</p></div></article>
+          <div class="selection-center"><span class="versus">V<span>S</span><i>!</i></span><span id="mode-name" class="small-mode">혼자서 플레이</span></div>
+          <article class="fighter-preview preview-p2" id="preview-1"><div class="preview-label"><span class="player-tag opponent" id="opponent-label">CPU</span><span class="selection-status" id="selection-status-1">선택 대기</span></div><div class="preview-art"><span class="preview-halo"></span><img id="preview-art-1" src="./assets/characters/hacker-idle.svg" alt="해킹범"></div><div class="preview-info"><p class="preview-series" id="preview-series-1">해킹쏭</p><h2 id="preview-name-1">해킹범</h2><span class="role-chip" id="preview-role-1">견제형</span><p class="preview-skill" id="preview-skill-1">파일 날리기</p></div></article>
+        </div>
+        <div class="roster" id="roster" role="group" aria-label="출전 캐릭터 선택"></div>
+      </section>
+
+      <section class="game-screen stage-screen hidden" id="stage-screen" aria-labelledby="stage-title" inert>
+        <div class="screen-heading"><div><h1 id="stage-title"><span class="marker">무대 선택</span></h1></div></div>
+        <div class="match-strip"><span><b class="player-tag">1P</b><strong id="match-p1">참치맨</strong></span><i>vs</i><span><strong id="match-p2">해킹범</strong><b class="player-tag opponent" id="match-opponent">CPU</b></span></div>
+        <div class="stage-grid" id="stage-options" role="group" aria-label="대전 무대 선택"></div>
+        <div class="stage-rule"><span>✳</span><span id="rule-summary">60초 · 2선승</span><span class="rule-separator">/</span><button class="text-button" data-open="settings-dialog" id="difficulty-summary">보통 난이도</button></div>
+      </section>
+
+      <section class="game-screen battle-screen hidden" id="battle-screen" aria-label="대전 화면" inert>
+        <div class="battle-board" id="battle-board" tabindex="0" aria-label="대전장. WASD로 이동, J K L I로 공격, Esc로 일시정지">
+          <canvas id="arena" aria-label="원본 플래시 캐릭터들이 싸우는 대전장" role="img"></canvas>
+          <div class="fight-hud" aria-label="경기 상황">
+            <div class="player-hud p1-hud"><div class="player-name-row"><span class="player-tag">1P</span><strong id="p1-name">참치맨</strong><span class="series-label" id="p1-series">고추참치쏭</span><span class="round-dots" id="p1-rounds" aria-label="1P 라운드 승수"></span></div><div class="health-track" role="progressbar" id="p1-health" aria-label="1P 체력" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div class="health-ghost"></div><div class="health-fill"></div><span class="health-scribble"></span></div><div class="meter-row"><span>기력</span><div class="meter-track"><i id="p1-meter"></i></div><small id="p1-meter-label">30</small></div></div>
+            <div class="timer-hud"><span id="round-label">ROUND 01</span><strong id="timer">60</strong></div>
+            <div class="player-hud p2-hud"><div class="player-name-row"><span class="round-dots" id="p2-rounds" aria-label="상대 라운드 승수"></span><span class="series-label" id="p2-series">해킹쏭</span><strong id="p2-name">해킹범</strong><span class="player-tag opponent" id="p2-tag">CPU</span></div><div class="health-track" role="progressbar" id="p2-health" aria-label="상대 체력" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div class="health-ghost"></div><div class="health-fill"></div><span class="health-scribble"></span></div><div class="meter-row"><small id="p2-meter-label">30</small><div class="meter-track"><i id="p2-meter"></i></div><span>기력</span></div></div>
+          </div>
+
+          <div class="versus-overlay hidden" id="versus-overlay"><span class="versus">V<span>S</span><i>!</i></span><p id="versus-stage">냉장고 앞</p><button id="skip-versus" class="text-button">바로 시작 <kbd>Enter</kbd></button></div>
+
+          <div class="round-overlay hidden" id="round-overlay" aria-live="polite"><small id="round-announcement">ROUND 01</small><strong id="round-message"></strong></div>
+          <div class="network-overlay hidden" id="network-overlay" role="status" aria-live="polite"><span class="network-symbol">↻</span><h2 id="network-message">연결 복구 중</h2><p>경기를 잠시 멈췄습니다. <strong id="network-seconds">15초</strong></p><button class="outline-button" id="network-leave-button">방 나가기</button></div>
+          <div class="pause-overlay hidden" id="pause-overlay"><span class="pause-symbol">Ⅱ</span><h2>일시정지</h2><button id="resume-button" class="primary-button">계속 →</button><button id="leave-button" class="text-button">캐릭터 다시 선택</button><button id="home-button" class="text-button">모드 선택으로</button><small><kbd>Esc</kbd> 눌러서 계속</small></div>
+          <div class="result-overlay hidden" id="result-overlay"><div class="result-paper"><h2 id="result-title">참치맨 승</h2><p id="result-score">2 : 0</p><div class="result-buttons"><button id="rematch-button" class="primary-button">재대전 ↻</button><button id="reselect-button" class="outline-button">선수 바꾸기</button></div><button id="result-home-button" class="text-button">모드 선택으로</button></div></div>
+          <div class="board-bottom-left"><span class="live-indicator"></span><span id="game-status" role="status">대전 준비</span></div>
+          <div class="board-stage-label" id="board-stage-label">냉장고 앞</div>
+        </div>
+        <div class="touch-controls" id="touch-controls" aria-label="터치 조작"><div class="touch-directions"><button data-touch="jump" aria-label="점프">↑</button><button data-touch="left" aria-label="왼쪽">←</button><button data-touch="guard" aria-label="가드">↓</button><button data-touch="right" aria-label="오른쪽">→</button></div><div class="touch-attacks"><button data-touch="light">약</button><button data-touch="heavy">강</button><button data-touch="special">필살</button><button data-touch="super" class="touch-super">초필</button><button data-touch="dash">대시</button><button data-touch="throw">잡기</button></div></div>
+
+      </section>
+    </div>
+
+    <footer class="game-footer"><button id="back-button" class="back-button" disabled><span>←</span><span id="back-label">이전으로</span><kbd>Esc</kbd></button><p id="navigation-hint"><kbd>←</kbd><kbd>→</kbd> 선택 <span>·</span> <kbd>Enter</kbd> 결정</p><button id="next-button" class="primary-button" disabled><span id="next-label">캐릭터 선택</span><b>→</b></button><span class="battle-footer-note hidden" id="battle-footer-note"><kbd>J</kbd> 약 <kbd>K</kbd> 강 <kbd>L</kbd> 필살 <kbd>I</kbd> 초필살</span></footer>
+    <div class="loading-state" id="loading-state"><span class="loading-doodle">✳</span> 불러오는 중</div>
+  <dialog id="moves-dialog" class="paper-dialog"><div class="dialog-heading"><div><h2>조작법 및 기술표</h2></div><button class="dialog-close icon-button" aria-label="닫기">×</button></div><div class="control-columns"><section><h3><span class="player-tag">1P</span> 키보드</h3><p><kbd>A</kbd> <kbd>D</kbd> 이동 <kbd>W</kbd> 점프 <kbd>S</kbd> 가드</p><p><kbd>J</kbd> 약 <kbd>K</kbd> 강 <kbd>L</kbd> 필살 <kbd>I</kbd> 초필살</p><p><kbd>Space</kbd> 대시 <kbd>U</kbd> 또는 <kbd>J</kbd>+<kbd>K</kbd> 잡기</p></section><section><h3><span class="player-tag opponent">2P</span> 키보드</h3><p><kbd>←</kbd> <kbd>→</kbd> 이동 <kbd>↑</kbd> 점프 <kbd>↓</kbd> 가드</p><p><kbd>1</kbd> 약 <kbd>2</kbd> 강 <kbd>3</kbd> 필살 <kbd>0</kbd> 초필살</p><p><kbd>Shift →</kbd> 대시 <kbd>4</kbd> 잡기 <small>(숫자패드도 가능)</small></p></section></div><p class="dialog-tip">약 → 약 → 강 → 필살 · 약+강: 잡기 · 약+필살: 강화기술(기력 25) · 강+필살 또는 ↓+강: 추가기술 · <kbd>Esc</kbd> 일시정지.</p><details class="gamepad-help"><summary>게임패드</summary><p>스틱 / 십자키: 이동 · 십자키 ↑: 점프 · A: 약 · B: 강 · X: 필살 · Y: 초필살<br>LT / RT: 가드 · LB: 잡기 · RB: 대시 · A+X: 강화기술 · B+X 또는 ↓+B: 추가기술 · Start: 시작 / 일시정지</p></details><div class="move-fighter-tabs" id="move-fighter-tabs"></div><div class="move-details" id="move-details"></div></dialog>
+
+  <dialog id="settings-dialog" class="paper-dialog settings-dialog"><div class="dialog-heading"><div><h2>게임 설정</h2></div><button class="dialog-close icon-button" aria-label="닫기">×</button></div><form id="settings-form"><fieldset><legend>대전 규칙 <small>다음 경기부터 적용돼요</small></legend><label class="setting-row"><span>한 라운드 시간</span><select name="time"><option value="30">30초</option><option value="60">60초</option><option value="99">99초</option></select></label><label class="setting-row"><span>승리 조건</span><select name="wins"><option value="1">1선승</option><option value="2">2선승</option><option value="3">3선승</option></select></label><label class="setting-row"><span>CPU 난이도</span><select name="difficulty"><option value="easy">쉬움</option><option value="normal">보통</option><option value="hard">어려움</option></select></label></fieldset><fieldset><legend>소리와 화면</legend><label class="setting-row"><span>효과음 · 원본 대사</span><input type="range" name="volume" min="0" max="1" step=".05" aria-label="효과음 볼륨"></label><label class="setting-row"><span>원본 음악 크기</span><input type="range" name="music" min="0" max=".5" step=".01" aria-label="배경음악 볼륨"></label><label class="setting-row"><span>원본 음악 재생</span><input type="checkbox" name="musicOn"></label><label class="setting-row"><span>타격 시 화면 흔들림</span><input type="checkbox" name="motion"></label><label class="setting-row"><span>공격 · 피격 판정 표시</span><input type="checkbox" name="hitboxes"></label></fieldset><button class="primary-button settings-save" type="submit">저장 ✓</button><p class="settings-footnote">설정은 이 브라우저에 저장됩니다.</p></form></dialog>
+
+  <dialog id="archive-dialog" class="paper-dialog archive-dialog"><div class="dialog-heading"><div><h2>원본 보관함</h2></div><button class="dialog-close icon-button" aria-label="닫기">×</button></div><p class="archive-intro">원본 SWF에서 추출한 그림과 음원입니다.</p><div class="archive-grid" id="archive-grid"></div><p class="archive-credit">원작의 그림과 음악은 각 원작자의 작품입니다. 게임 속 선수 이름은 구분을 위한 별칭이며, 움직임과 기술은 원본 장면을 게임 규칙에 맞게 구성했습니다.</p></dialog>
+
+    <div class="toast" id="toast" role="status"></div>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

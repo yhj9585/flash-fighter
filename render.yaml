@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: flash-versus-online
+    runtime: node
+    plan: free
+    numInstances: 1
+    region: singapore
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: ALLOWED_ORIGINS
+        sync: false

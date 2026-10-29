@@ -1,0 +1,21 @@
+{
+  "name": "flash-versus",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "고추참치송 × 해킹송, 원본 SWF 에셋으로 만든 낙서 대전게임",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check src/main.js && node --check src/flow.js && node --check src/engine.js && node --check src/renderer.js && node --check src/audio.js && node --check src/combat.js && node --check src/commands.js && node --check src/online.js && node --check src/online-ui.js && node --check src/net-state.js && node --check server.mjs && node --check server/online-server.mjs && node --check src/matchmaking.js && node --check server/matchmaking.mjs && node --check src/deployment.js && node --check tools/build-static.mjs",
+    "build": "node tools/build.mjs",
+    "build:vercel": "node tools/build-static.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "ws": "8.22.0"
+  }
+}

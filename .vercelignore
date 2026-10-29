@@ -1,0 +1,11 @@
+/*
+!/index.html
+!/favicon.svg
+!/src/
+!/assets/
+!/package.json
+!/package-lock.json
+!/vercel.json
+!/tools/
+/tools/*
+!/tools/build-static.mjs
