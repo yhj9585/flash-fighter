@@ -6,6 +6,7 @@ dist-static/
 .env.*
 !.env.example
 artifacts/
+ost-1/
 tools/ffdec/
 tools/ffdec.zip
 tools/export-*/

@@ -132,11 +132,8 @@ export class GameAudio {
     if(event.type==='roundStart'){this.stopVoice('voice-0');this.stopVoice('voice-1');this.lastHurt=[-100,-100];}
     if(event.type==='attack' && event.voice)this.play(event.voice,`voice-${event.player}`,{interrupt:event.kind==='super'});
     if(event.type==='hit') {
-      this.tone(event.kind);
       if(event.tick-this.lastHurt[event.target]>85){this.lastHurt[event.target]=event.tick;this.play(engine.players[event.target].def.voice.hurt,`voice-${event.target}`,{interrupt:false});}
     }
-    if(event.type==='guard')this.tone('guard');
-    if(event.type==='fight')this.tone('ui');
     if(event.type==='roundEnd' && event.winner!==null)this.play(engine.players[event.winner].def.voice.win,`voice-${event.winner}`);
     if(event.type==='pause')this.pause(event.paused);
     if(event.type==='matchEnd')this.stopMusic();

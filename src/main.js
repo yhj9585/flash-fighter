@@ -60,13 +60,9 @@ function receiveOnlineFrame(state,events,epoch){
 }
 
 function syncMusic(){
+  if(flow.screen==='battle'){audio.stopMusic();return;}
   if(audio.context?.state!=='running')return;
-  if(flow.screen==='battle'){
-    if(engine.phase==='matchOver')audio.stopMusic();
-    else audio.music(STAGES.find(stage=>stage.id===flow.stage).source).catch(()=>{});
-  }else{
-    audio.pause(false);audio.menuMusic().catch(()=>{});
-  }
+  audio.pause(false);audio.menuMusic().catch(()=>{});
 }
 function unlockAudio(){return audio.unlock().then(()=>syncMusic()).catch(()=>{});}
 // Browsers allow music after the first pointer or keyboard interaction.
@@ -308,7 +304,7 @@ const resizeObserver=new ResizeObserver(entries=>{
 });
 resizeObserver.observe($('#game-shell'));
 function updateSoundButton(){$('#sound-button').classList.toggle('muted',settings.muted);$('#sound-button').setAttribute('aria-label',settings.muted?'소리 켜기':'소리 끄기');}
-$('#sound-button').addEventListener('click',async()=>{settings.muted=!settings.muted;saveSettings();await unlockAudio();if(!settings.muted)audio.tone('ui');});
+$('#sound-button').addEventListener('click',async()=>{settings.muted=!settings.muted;saveSettings();await unlockAudio();if(!settings.muted&&flow.screen!=='battle')audio.tone('ui');});
 
 function openDialog(id){
   if(modalOpen)return;

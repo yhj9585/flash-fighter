@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: flash-versus-online
+    name: flash-fighter-online
     runtime: node
     plan: free
     numInstances: 1

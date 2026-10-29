@@ -77,6 +77,28 @@ test('only super and victory events interrupt a player voice',()=>{
   ]);
 });
 
+test('battle events play character voices without generated tones or background music',()=>{
+  const audio=new GameAudio({}),voices=[];let tones=0,music=0;
+  audio.play=(name,channel)=>voices.push({name,channel});
+  audio.tone=()=>tones++;audio.music=()=>music++;audio.menuMusic=()=>music++;
+  const engine={players:[{def:{voice:{hurt:'tuna-hurt',win:'tuna-win'}}}]};
+  for(const event of [
+    {type:'fight'},
+    {type:'attack',player:0,kind:'special',voice:'tuna-special'},
+    {type:'hit',target:0,tick:100,kind:'heavy'},
+    {type:'guard'},
+    {type:'attack',player:0,kind:'super',voice:'tuna-super'},
+    {type:'roundEnd',winner:0},
+  ])audio.onEvent(event,engine);
+  assert.deepEqual(voices,[
+    {name:'tuna-special',channel:'voice-0'},
+    {name:'tuna-hurt',channel:'voice-0'},
+    {name:'tuna-super',channel:'voice-0'},
+    {name:'tuna-win',channel:'voice-0'},
+  ]);
+  assert.equal(tones,0);assert.equal(music,0);
+});
+
 test('selection and battle share player slots while a preview plays exclusively',async()=>{
   const {audio,nodes}=audioFixture();
   await audio.select('tuna-select',0);
